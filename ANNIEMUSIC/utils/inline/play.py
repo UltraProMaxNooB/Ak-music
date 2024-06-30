@@ -198,7 +198,7 @@ def queue_markup(_, videoid, chat_id):
     buttons = [
         
           [
-            InlineKeyboardButton(text="II ᴘᴀᴜsᴇ", callback_data=f"ADMIN Pause|{chat_id}",),
+            InlineKeyboardButton(text="II", callback_data=f"ADMIN Pause|{chat_id}",),
             InlineKeyboardButton(text="▢", callback_data=f"ADMIN Stop|{chat_id}"),
             InlineKeyboardButton(text="‣‣I", callback_data=f"ADMIN Skip|{chat_id}"),
         ],
