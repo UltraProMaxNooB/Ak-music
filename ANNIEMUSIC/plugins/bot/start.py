@@ -62,8 +62,8 @@ async def start_pm(client, message: Message, _):
             keyboard = help_pannel(_)
             sticker_message = await message.reply_sticker(sticker=random.choice(STICKERS))
             asyncio.create_task(delete_sticker_after_delay(sticker_message, 2))  # Delete sticker after 2 seconds
-        await message.reply_photo(
-              photo=config.START_IMG_URL,
+            await message.reply_video(
+                random.choice(ANNIE_VID),
                 caption=_["help_1"].format(config.SUPPORT_CHAT),
                 reply_markup=keyboard,
             )
@@ -118,8 +118,8 @@ async def start_pm(client, message: Message, _):
         served_chats = len(await get_served_chats())
         served_users = len(await get_served_users())
         UP, CPU, RAM, DISK = await bot_sys_stats()
-        await message.reply_photo(
-              photo=config.START_IMG_URL,
+        await message.reply_video(
+            random.choice(ANNIE_VID),
             caption=random.choice(AYUV).format(message.from_user.mention, app.mention, UP, DISK, CPU, RAM, served_users, served_chats),
             reply_markup=InlineKeyboardMarkup(out),
         )
